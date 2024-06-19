@@ -9,15 +9,15 @@ const Header = () => {
   const [show, setShow] = useState(false);
   const items = [
     { name: "الصفحه الرئيسه", path: "/" },
-    { name: "عالم", path: "World" },
-    { name: "سياسه", path: "Politics" },
-    { name: "اقتصاد", path: "Business" },
-    { name: "رياضه", path: "Sports" },
-    { name: "ثقافه وفن", path: "Culture" },
-    { name: "تكنولوجيا", path: "Technology" },
-    { name: "الشرق الاوسط", path: "Arab" },
-    { name: "صحه", path: "Health" },
-    { name: "فلسطين", path: "Palestine" },
+    { name: "عالم", path: "world" },
+    { name: "سياسه", path: "politics" },
+    { name: "اقتصاد", path: "business" },
+    { name: "رياضه", path: "sports" },
+    { name: "تكنولوجيا", path: "technology" },
+    { name: "الشرق الاوسط", path: "arab" },
+    { name: "صحه", path: "health" },
+    { name: "فلسطين", path: "palestine" },
+    { name: "ثقافه وفن", path: "culture" },
   ];
   const handleActive = (idx) => {
     setActive(idx);

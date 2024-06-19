@@ -4,15 +4,15 @@ import React from "react";
 const Footerlinks = () => {
   const items = [
     { name: "الصفحه الرئيسه", path: "/" },
-    { name: "عالم", path: "World" },
-    { name: "سياسه", path: "Politics" },
-    { name: "اقتصاد", path: "Business" },
-    { name: "رياضه", path: "Sports" },
-    { name: "تكنولوجيا", path: "Technology" },
-    { name: "الشرق الاوسط", path: "Arab" },
-    { name: "صحه", path: "Health" },
-    { name: "فلسطين", path: "Palestine" },
-    { name: "ثقافه وفن", path: "Culture" },
+    { name: "عالم", path: "world" },
+    { name: "سياسه", path: "politics" },
+    { name: "اقتصاد", path: "business" },
+    { name: "رياضه", path: "sports" },
+    { name: "تكنولوجيا", path: "technology" },
+    { name: "الشرق الاوسط", path: "arab" },
+    { name: "صحه", path: "health" },
+    { name: "فلسطين", path: "palestine" },
+    { name: "ثقافه وفن", path: "culture" },
   ];
   return (
     <div className="w-2/6  flex items-start justify-between mx-5 max-md:w-full max-md:m-0 border-b-neutral-600 max-md:border-b-2 max-md:border-neutral-800 max-md:mb-5">
