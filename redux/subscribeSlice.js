@@ -1,5 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
+
+    
 const initialState = {
   loading: false,
   subscribed: null,
@@ -10,7 +16,7 @@ export const subscribeEmail = createAsyncThunk(
   "subscribeSlice/subscribeEmail",
   async (email, { rejectWithValue }) => {
     try {
-      const req = await fetch("http://localhost:5000/subscribe", {
+      const req = await fetch(`${base_url}/subscribe`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

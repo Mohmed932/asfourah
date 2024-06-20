@@ -1,7 +1,10 @@
 import Breakingnews from "@/Components/Breakingnews";
 import World from "@/Components/PageSections/World";
 import React, { Fragment } from "react";
-
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
 export const metadata = {
   title: "أخبار العالم - تحديثات حصرية عن الأحداث العالمية",
   description:
@@ -26,7 +29,7 @@ export const metadata = {
 
 
 const page = async () => {
-  const req = await fetch("http://localhost:5000/category/world?page=1&limit=9", {
+  const req = await fetch(`${base_url}/category/world?page=1&limit=9`, {
     next: { revalidate: 60 },
   });
   const res = await req.json();

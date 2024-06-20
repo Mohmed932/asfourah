@@ -1,5 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
+
+    
 const initialState = {
   loading: false,
   result: [],
@@ -11,7 +17,7 @@ export const SearchResult = createAsyncThunk(
   async (search, { rejectWithValue }) => {
     try {
       const req = await fetch(
-        `http://localhost:5000/news/search?query=${search}`
+        `${base_url}/news/search?query=${search}`
       );
       const res = await req.json();
       return res

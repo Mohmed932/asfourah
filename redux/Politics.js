@@ -1,5 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
+
+    
 const initialState = {
   loading: false,
   newsData: [],
@@ -11,7 +17,7 @@ export const loadMoreDataPolitics = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const req = await fetch(
-        `http://localhost:5000/category/Politics?page=${page}&limit=9`
+        `${base_url}/category/Politics?page=${page}&limit=9`
       );
       const res = await req.json();
       return res

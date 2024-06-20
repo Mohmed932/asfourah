@@ -2,7 +2,10 @@ import { Fragment } from "react";
 import Breakingnews from "@/Components/Breakingnews";
 import Politics from "@/Components/PageSections/Politics";
 
-
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
 export const metadata = {
   title: "أخبار السياسة - تحديثات حصرية عن السياسة في الشرق الأوسط",
   description:
@@ -27,7 +30,7 @@ export const metadata = {
 
 
 const page = async () => {
-  const req = await fetch("http://localhost:5000/category/politics?page=1&limit=9", {
+  const req = await fetch(`${base_url}/category/politics?page=1&limit=9`, {
     next: { revalidate: 60 },
   });
   const res = await req.json();

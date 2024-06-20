@@ -1,9 +1,12 @@
 import Singlenews from "@/Components/Singlenews/Singlenews";
 import { Suspense } from "react";
-
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
 const fetchNewsData = async(id) => {
   try {
-    const req = await fetch(`http://localhost:5000/news/${id}`);
+    const req = await fetch(`${base_url}/news/${id}`);
     const res = await req.json();
     return res
   } catch (error) {
