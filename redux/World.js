@@ -17,7 +17,7 @@ export const loadMoreDataWorld = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const req = await fetch(
-        `${base_url}/category/World?page=${page}&limit=9`
+        `${base_url}/category/world?page=${page}&limit=9`
       );
       const res = await req.json();
       return res

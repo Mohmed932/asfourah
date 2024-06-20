@@ -17,7 +17,7 @@ export const loadMoreDataCulture = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const req = await fetch(
-        `${base_url}/category/Culture?page=${page}&limit=9`
+        `${base_url}/category/culture?page=${page}&limit=9`
       );
       const res = await req.json();
       return res

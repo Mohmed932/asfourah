@@ -17,7 +17,7 @@ export const loadMoreDataTechnology = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const req = await fetch(
-        `${base_url}/category/Technology?page=${page}&limit=9`
+        `${base_url}/category/technology?page=${page}&limit=9`
       );
       const res = await req.json();
       return res

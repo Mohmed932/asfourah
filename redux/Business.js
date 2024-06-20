@@ -17,7 +17,7 @@ export const loadMoreDataBusiness = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       const req = await fetch(
-        `${base_url}/category/Business?page=${page}&limit=9`
+        `${base_url}/category/business?page=${page}&limit=9`
       );
       const res = await req.json();
       return res
