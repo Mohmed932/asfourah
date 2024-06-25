@@ -2,9 +2,14 @@ import React from "react";
 import LineTitle from "../Section/LineTitle";
 import LeftRight from "./LeftRight";
 
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
+
 const Left = async () => {
   const title = "عالم";
-  const req = await fetch("http://localhost:5000/section/world", {
+  const req = await fetch(`${base_url}/section/world`, {
     next: { revalidate: 60 },
   });
   const res = await req.json();
