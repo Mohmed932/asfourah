@@ -1,3 +1,4 @@
+import 'tailwindcss/tailwind.css'
 import { Noto_Sans_Georgian as NotoSansGeorgianFont } from "next/font/google";
 import "@/app/globals.css";
 import { Suspense } from "react";
