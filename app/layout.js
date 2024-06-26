@@ -1,10 +1,10 @@
 import { Noto_Sans_Georgian as NotoSansGeorgianFont } from "next/font/google";
 import "./globals.css";
-import { lazy } from "react";
-import Footer from "@/Components/Footer/Footer";
+import { Suspense } from "react";
 import ReduxProvider from "./ReduxProvider";
+import Footer from "@/Components/Footer/Footer";
+import Header from "@/Components/Header/Header";
 
-const Header = lazy(() => import("@/Components/Header/Header"));
 
 const inter = NotoSansGeorgianFont({ subsets: ["georgian"], display: "swap" });
 
@@ -29,15 +29,18 @@ export const metadata = {
   },
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
       <body className={inter.className}>
         <ReduxProvider>
-          <Header />
+          <Suspense>
+            <Header />
+          </Suspense>
           {children}
-          <Footer />
+          <Suspense>
+            <Footer />
+          </Suspense>
         </ReduxProvider>
       </body>
     </html>

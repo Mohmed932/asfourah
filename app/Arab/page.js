@@ -27,12 +27,9 @@ export const metadata = {
 };
 
 const page = async () => {
-  const req = await fetch(
-    `${base_url}/category/arab?page=1&limit=9`,
-    {
-      next: { revalidate: 60 },
-    }
-  );
+  const req = await fetch(`${base_url}/category/arab?page=1&limit=9`, {
+    next: { revalidate: 60 },
+  });
   const res = await req.json();
   return (
     <Fragment>

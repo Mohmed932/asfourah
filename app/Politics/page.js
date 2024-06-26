@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 import Breakingnews from "@/Components/Breakingnews";
 import Politics from "@/Components/PageSections/Politics";
 
@@ -27,8 +27,6 @@ export const metadata = {
   },
 };
 
-
-
 const page = async () => {
   const req = await fetch(`${base_url}/category/politics?page=1&limit=9`, {
     next: { revalidate: 60 },
@@ -36,7 +34,9 @@ const page = async () => {
   const res = await req.json();
   return (
     <Fragment>
-      <Breakingnews />
+      <Suspense>
+        <Breakingnews />
+      </Suspense>
       <Politics news={res} />
     </Fragment>
   );

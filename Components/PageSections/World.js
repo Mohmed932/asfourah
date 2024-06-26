@@ -26,7 +26,6 @@ const World = ({ news }) => {
   }, [newsData]);
 
   const handeLoadMore = () => {
-    console.log(data);
     setPage((prevPage) => prevPage + 1);
   };
   return (
