@@ -1,5 +1,5 @@
 import { Noto_Sans_Georgian as NotoSansGeorgianFont } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { Suspense } from "react";
 import ReduxProvider from "./ReduxProvider";
 import Footer from "@/Components/Footer/Footer";
