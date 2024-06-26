@@ -3,8 +3,13 @@ import React from "react";
 import MainTopNews from "./MainTopNews";
 import SingleTopNews from "./SingleTopNews";
 
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
+
 const TopNews = async () => {
-  const req = await fetch("http://localhost:5000/topnews", {
+  const req = await fetch(`${base_url}/topnews`, {
     next: { revalidate: 60 },
   });
   const res = await req.json();

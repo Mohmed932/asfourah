@@ -3,9 +3,14 @@ import LineTitle from "./Section/LineTitle";
 import Link from "next/link";
 import { convertToArabicDate } from "@/utility/ConvertToArabicDate";
 
+const base_url =
+  process.env.NODE_ENV !== "production"
+    ? "http://localhost:5000"
+    : "https://transporter-backend.onrender.com";
+
 const LatestNews = async() => {
   const title = "اخر الاخبار";
-  const req = await fetch("http://localhost:5000/section/latest", {
+  const req = await fetch(`${base_url}/section/latest`, {
     next: { revalidate: 60 },
   });
   const res = await req.json();
