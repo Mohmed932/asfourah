@@ -17,7 +17,7 @@ const Mobilebar = ({ active, handleActive, setShow, show, items }) => {
       >
         <div className="w-full h-2 bg-red-900 " />
         <div className="border-b-2 border-neutral-900 p-4 flex items-center justify-between">
-          <img src="icon.png" alt="asfourah" className="w-10" />
+          <img src="/icon.png" alt="asfourah" className="w-10" />
           <CloseIcon
             className="cursor-pointer"
             onClick={() => setShow(false)}
