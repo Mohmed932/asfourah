@@ -35,7 +35,7 @@ const Mobilebar = ({ active, handleActive, setShow, show, items }) => {
                 } hover:text-red-800 duration-500 cursor-pointer`}
               />
               <Link
-                href={item === "Home" ? "/" : `/${item.path.toLowerCase()}`}
+                href={item === "Home" ? "/" : `/${item.path}`}
                 className={`${
                   active === idx ? "text-red-800" : "text-white"
                 } hover:text-red-800 duration-500`}
